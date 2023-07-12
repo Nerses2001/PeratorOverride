@@ -67,6 +67,9 @@ namespace PeratorOverride
         public static int operator >(Point a, Point b) => a.CompareTo(b);
         public static int operator <(Point a, Point b) => b.CompareTo(a);
 
+        public static Point operator &(Point a, Point b)=> (a.x >= 0 && a.y >= 0 && b.x >= 0 && b.y >= 0) ? new Point(1, 1) : new Point(-1, -1);
+        public static Point operator |(Point a, Point b) => (a.x >= 0 && a.y >= 0 && b.x >= 0 && b.y >= 0) ? new Point(-1, -1) : new Point(1, 1);
+
 
 
         public override string ToString() => string.Format("Res x = {0}, Res y = {1}", this.x, this.y);
